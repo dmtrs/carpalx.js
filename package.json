@@ -4,7 +4,7 @@
   "description": "Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --require hook --reporter spec"
   },
   "keywords": [
     "carpalx",

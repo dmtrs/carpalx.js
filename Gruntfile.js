@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                     reporter: 'spec',
                     quiet: false, // Optionally suppress output to standard out (defaults to false)
                     clearRequireCache: true, // https://github.com/pghalliday/grunt-mocha-test#running-in-permanent-environments-like-watch
+                    require: [ "hook" ],
                     colors: false
                 },
                 src: ['test/**/*.spec.js']
