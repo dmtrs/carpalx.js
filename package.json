@@ -1,0 +1,27 @@
+{
+  "name": "carpalx.js",
+  "version": "0.0.1",
+  "description": "Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "keywords": [
+    "carpalx",
+    "keyboard",
+    "layout",
+    "qwerty",
+    "dvorak",
+    "coleman"
+  ],
+  "author": "dmtrs <tydeas.dr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.5"
+  }
+}
