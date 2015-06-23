@@ -7,7 +7,7 @@ function Layout(chars) {
     [ 2, 2, 2, 2, 3.5, 2, 2, 2, 2, 2 ] //down row
   ];
 
-  this.indexOf = curry(function(fn, key) {
+  var indexOf = curry(function(fn, key) {
     for(var i in chars) {
       var index = chars[i].indexOf(key);
       if ( index >= 0) {
@@ -15,22 +15,18 @@ function Layout(chars) {
       }
     }
   });
-}
 
-/**
- * @return double baseline key effort
- **/
-Layout.prototype.effort = function(key) {
-  return this.indexOf(function(index, chars, efforts) {
-    return efforts[index];
-  })(key);
-};
+  /**
+   * @return double baseline key effort
+   **/
+  this.effort = indexOf(function(index, chars, efforts) {
+      return efforts[index];
+  });
 
-/**
- * @return integer finger assignment
- **/
-Layout.prototype.finger = function(key) {
-  return this.indexOf(function(index) {
+  /**
+   * @return integer finger assignment
+   **/
+  this.finger = indexOf(function(index) {
     if (index === 4) {
       return 3;
     }
@@ -41,16 +37,20 @@ Layout.prototype.finger = function(key) {
       return 9;
     }
     return index;
-  })(key);
-};
+  });
 
-/**
- * @return string hand assignment
- **/
-Layout.prototype.hand = function(key) {
-  return this.indexOf(function(index) {
+  /**
+   * @return string hand assignment
+   **/
+  this.hand = indexOf(function(index) {
     return index > 4 ? "R" : "L";
-  })(key);
-};
+  });
+}
 
 module.exports = Layout;
+
+module.exports.qwerty = new Layout([
+      ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
+      ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"],
+      ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]
+]);

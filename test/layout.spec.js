@@ -1,16 +1,7 @@
-var Layout = require('../src/layout');
+var qwerty = require('../src/layout').qwerty;
 
 describe('Layout', function() {
-  var qwerty;
-
-  before(function() {
-    qwerty = new Layout([
-      ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
-      ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"],
-      ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]
-    ]);
-  });
-
+  
   describe('layout.finger(char)', function() {
     it('should return finger assignment', function() {
       qwerty.finger("q").should.be.equals(0);
