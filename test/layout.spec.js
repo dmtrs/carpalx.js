@@ -18,9 +18,19 @@ describe('Layout', function() {
     it('should new Layout return finger assignment', function() {
         colemak.effort("f").should.be.equals(2.0);
     });
+    it('should new Layout return row of char', function() {
+        colemak.row("f").should.be.equals(0);
+    });
   });
 });
   
+describe('qwerty.row(char)', function() {
+  it('should return finger assignment', function() {
+    qwerty.row("q").should.be.equals(0);
+    qwerty.row("a").should.be.equals(1);
+    qwerty.row("z").should.be.equals(2);
+  });
+});
 describe('qwerty.finger(char)', function() {
   it('should return finger assignment', function() {
     qwerty.finger("q").should.be.equals(0);
