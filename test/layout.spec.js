@@ -4,19 +4,25 @@ var qwerty = require('../src/layout').qwerty;
 describe('Layout', function() {
   var colemak;
   before(function() {
-      colemak = new Layout([ "qwfpgjluy;[]\\", "arstdhneio`",  "zxcvbkm,./" ].map(function(row) {
-          return row.split('');
-      }));
+    colemak = new Layout([
+        "qwfpgjluy;[]\\",
+        "arstdhneio`",
+        "zxcvbkm,./"
+      ].map(function(row) { return row.split(''); }), 'colemak1'
+    );
   });
   describe('new', function() {
     it('should return finger assignment', function() {
-        colemak.finger("f").should.be.equals(2);
+      colemak.finger("f").should.be.equals(2);
     });
     it('should new Layout return finger assignment', function() {
-        colemak.hand("f").should.be.equals("L");
+      colemak.hand("f").should.be.equals("L");
     });
     it('should new Layout return finger assignment', function() {
-        colemak.effort("f").should.be.equals(2.0);
+      colemak.effort("f").should.be.equals(2.0);
+    });
+    it('should new Layout return name', function() {
+      colemak.name().should.be.equals('colemak1');
     });
     it('should new Layout return row of char', function() {
         colemak.row("f").should.be.equals(0);
@@ -38,13 +44,13 @@ describe('qwerty.finger(char)', function() {
     qwerty.finger("e").should.be.equals(2);
     qwerty.finger("r").should.be.equals(3);
     qwerty.finger("t").should.be.equals(3);
-    qwerty.finger("y").should.be.equals(6);
-    qwerty.finger("u").should.be.equals(6);
-    qwerty.finger("i").should.be.equals(7);
-    qwerty.finger("o").should.be.equals(8);
-    qwerty.finger("p").should.be.equals(9);
-    qwerty.finger("[").should.be.equals(9);
-    qwerty.finger("]").should.be.equals(9);
+    qwerty.finger("y").should.be.equals(4);
+    qwerty.finger("u").should.be.equals(4);
+    qwerty.finger("i").should.be.equals(5);
+    qwerty.finger("o").should.be.equals(6);
+    qwerty.finger("p").should.be.equals(7);
+    qwerty.finger("[").should.be.equals(7);
+    qwerty.finger("]").should.be.equals(7);
   });
 });
 

@@ -1,4 +1,4 @@
-function Layout(chars) {
+function Layout(chars, name) {
   var base = [
     [ 2, 2, 2, 2, 2.5, 3, 2, 2, 2, 2, 2.5, 4, 6 ], //row 1
     [ 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2 ], //row 2 base
@@ -31,14 +31,17 @@ function Layout(chars) {
    * @return integer finger assignment
    **/
   this.finger = indexOf(function(i, j) {
+    if (j > 8 ) {
+      return 7;
+    }
     if (j === 4) {
       return 3;
     }
     if (j === 5) {
-      return 6;
+      return 4;
     }
-    if (j > 8 ) {
-      return 9;
+    if( j > 5 ) {
+      return j-2;
     }
     return parseInt(j);
   });
@@ -49,12 +52,28 @@ function Layout(chars) {
   this.hand = indexOf(function(i, j) {
     return j > 4 ? "R" : "L";
   });
+
+  this.name = function() {
+    return name;
+  };
 }
 
 module.exports = Layout;
 
 module.exports.qwerty = new Layout([
-      ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
-      ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"],
-      ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]
-]);
+  ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
+  ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"],
+  ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]
+], 'qwerty');
+
+module.exports.dvorak = new Layout([
+  ["'", ",", ".", "p", "y", "f", "g", "c", "r", "l", "/", "="],
+  ["a", "o", "e", "u", "i", "d", "h", "t", "n", "s", "-"],
+  [":", "q", "j", "k", "x", "b", "m", "w", "v", "z"],
+], 'dvorak');
+
+module.exports.colemak = new Layout([
+  [ "q", "w", "f", "p", "g", "j", "l", "u", "y", ";", "[", "]" ],
+  [ "a", "r", "s", "t", "d", "h", "n", "e", "i", "o", "`" ],
+  [ "z", "x", "c", "v", "b", "k", "m", ",", ".", "/" ]
+], 'colemak');
