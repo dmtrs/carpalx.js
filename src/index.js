@@ -1,3 +1,3 @@
-var Carpalx = require('./carpalx');
+var carpalx = require('./carpalx');
 
-new Carpalx('/usr/share/dict/words');
+carpalx('/usr/share/dict/words');
