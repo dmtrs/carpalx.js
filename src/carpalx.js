@@ -57,7 +57,7 @@ function map(path, done) {
       triads.set(t, c);
       // move to next triad of line
       parse(ln.substr(1));
-      })(normalise(line));
+    })(normalise(line));
 
   });
 
