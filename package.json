@@ -25,6 +25,6 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "curry": "^1.2.0"
+    "stringmap": "^0.2.2"
   }
 }
