@@ -25,7 +25,7 @@ Detailed information information on how `typing effort model` works can be found
 
 Clone repo and install dependencies:
 
-    git clone git@bitbucket.org:dmtrs/carpalx.js.git
+    git clone https://github.com/dmtrs/carpalx.js.git
     cd carpalx.js
     npm install
 
