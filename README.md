@@ -10,8 +10,10 @@ Carpalx optimizes keyboard layouts to create ones that require less effort and s
 >The carpalx project introduces a quantitative model for typing effort and applies it to (a) evaluate QWERTY and popular alternatives, such as Dvorak and Colemak and (b) find the keyboard layouts that minimize typing effort for a given set of input documents. In the work presented here, these documents are English text, but they can be anything, such as corpora in French, Spanish and even programming languages, like C or Python.
 >
 >While there are many alternate layouts, the Carpalx project proposes new layouts and a fully-baked parametric model of typing effort. Way!
+>
+>©2005-2014 Martin Krzywinski
 
-**[homepage](http://mkweb.bcgsc.ca/carpalx/?)**
+**[Visit homepage](http://mkweb.bcgsc.ca/carpalx/?)**
 
 ##How it works
 
