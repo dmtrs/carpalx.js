@@ -10,3 +10,22 @@ Carpalx optimizes keyboard layouts to create ones that require less effort and s
 >While there are many alternate layouts, the Carpalx project proposes new layouts and a fully-baked parametric model of typing effort. Way!
 
 **[homepage](http://mkweb.bcgsc.ca/carpalx/?)**
+
+
+##Usage
+
+###Setup
+
+  git clone git@bitbucket.org:dmtrs/carpalx.js.git
+  cd carpalx.js
+  npm install
+
+###Run
+
+Run demo on the `/usr/share/dict/words` file:
+
+  node src/index.js
+
+###Test
+
+  npm test
