@@ -4,7 +4,13 @@
   "description": "Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require hook --reporter spec"
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require hook --reporter spec",
+    "test-cov": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require hook",
+    "test-travis": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require hook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmtrs/restch.git"
   },
   "keywords": [
     "carpalx",
@@ -22,6 +28,7 @@
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-mocha-test": "^0.12.7",
+    "istanbul": "^0.3.17",
     "mocha": "^2.2.5"
   },
   "dependencies": {
