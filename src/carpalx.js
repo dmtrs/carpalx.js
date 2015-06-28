@@ -91,4 +91,4 @@ function reduce(layouts) {
 
 module.exports = function(path) {
   map(path, reduce(layouts));
-}
+};

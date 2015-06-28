@@ -11,21 +11,32 @@ Carpalx optimizes keyboard layouts to create ones that require less effort and s
 
 **[homepage](http://mkweb.bcgsc.ca/carpalx/?)**
 
+##How it works
 
-##Usage
+>The carpalx typing effort model is based on triads, which are three character substrings formed from the training text. A triad starts at each letter position. Thus, triads overlap, though this is configurable. The effort model takes into account contributions of the following characteristics
+>
+>- finger travel distance
+>- hand, finger and row penalties
+>- stroke path
 
-###Setup
+Detailed information information on how `typing effort model` works can be found [here](http://mkweb.bcgsc.ca/carpalx/?typing_effort)
 
-  git clone git@bitbucket.org:dmtrs/carpalx.js.git
-  cd carpalx.js
-  npm install
+##Setup
 
-###Run
+Clone repo and install dependencies:
 
-Run demo on the `/usr/share/dict/words` file:
+    git clone git@bitbucket.org:dmtrs/carpalx.js.git
+    cd carpalx.js
+    npm install
 
-  node src/index.js
+##Run
 
-###Test
+Current version runs typing effort model the `/usr/share/dict/words` file (see `src/index.js`):
 
-  npm test
+    node src/index.js
+
+##Test
+
+Run testing suite with:
+
+    npm test
