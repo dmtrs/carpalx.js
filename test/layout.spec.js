@@ -1,4 +1,4 @@
-var Layout = require('../src/layout');
+var Layout = require('../src/layout').Layout;
 var qwerty = require('../src/layout').qwerty;
 
 describe('Layout', function() {

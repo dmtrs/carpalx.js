@@ -58,22 +58,24 @@ function Layout(chars, name) {
   };
 }
 
-module.exports = Layout;
+module.exports.Layout = Layout;
 
-module.exports.qwerty = new Layout([
+module.exports.qwerty = qwerty = new Layout([
   ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
   ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"],
   ["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]
 ], 'qwerty');
 
-module.exports.dvorak = new Layout([
+module.exports.dvorak = dvorak = new Layout([
   ["'", ",", ".", "p", "y", "f", "g", "c", "r", "l", "/", "="],
   ["a", "o", "e", "u", "i", "d", "h", "t", "n", "s", "-"],
   [":", "q", "j", "k", "x", "b", "m", "w", "v", "z"],
 ], 'dvorak');
 
-module.exports.colemak = new Layout([
+module.exports.colemak = colemak = new Layout([
   [ "q", "w", "f", "p", "g", "j", "l", "u", "y", ";", "[", "]" ],
   [ "a", "r", "s", "t", "d", "h", "n", "e", "i", "o", "`" ],
   [ "z", "x", "c", "v", "b", "k", "m", ",", ".", "/" ]
 ], 'colemak');
+
+module.exports.layouts = [ qwerty, dvorak, colemak ];
