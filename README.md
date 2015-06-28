@@ -1,5 +1,7 @@
 Carpalx.js
 ==========
+[![Build Status](https://travis-ci.org/dmtrs/carpalx.js.svg?branch=master)](https://travis-ci.org/dmtrs/carpalx.js)
+[![Coverage Status](https://coveralls.io/repos/dmtrs/carpalx.js/badge.svg)](https://coveralls.io/r/dmtrs/carpalx.js)
 
 ##About
 
