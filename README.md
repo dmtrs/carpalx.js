@@ -29,18 +29,17 @@ Detailed information information on how `typing effort model` works can be found
 
 Clone repo and install dependencies:
 
-    git clone https://github.com/dmtrs/carpalx.js.git
-    cd carpalx.js
-    npm install
+    $ git clone https://github.com/dmtrs/carpalx.js.git cd carpalx.js
+    $ npm install
 
 ##Run
 
-Current version runs typing effort model the `/usr/share/dict/words` file (see `src/index.js`):
+Current version run the typing effort model for `/usr/share/dict/words` (see `src/index.js`):
 
-    node src/index.js
+    $ bash carpalx.sh
 
 ##Test
 
 Run testing suite with:
 
-    npm test
+    $ npm test
