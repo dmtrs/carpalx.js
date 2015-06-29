@@ -13,6 +13,33 @@ function normalise(str) {
 }
 
 /**
+ * Parse line to triads.
+ * A string of "test" will increase "tes","est" triads by 1 and return '' as remnant
+ *
+ * @param String ln line to read
+ * @param StringMap triads
+ * @return String remnant
+ */
+function parse(ln, triads) {
+  // move to next line
+  if (ln.length < 3 ) {
+      return ln;
+  }
+
+  // increase appearance of triad
+  var t = ln.slice(0,3);
+  var c = 1;
+      if (triads.has(t)) {
+      c = triads.get(t);
+      c++;
+  }
+  triads.set(t, c);
+
+  // move to next triad of line
+  return parse(ln.substr(1), triads);
+}
+
+/**
  * Map file to triads
  *
  * @param String file path
@@ -22,7 +49,7 @@ function map(path, done) {
   console.log('Mapping:', path);
 
   var file = readline.createInterface({
-      input : fs.createReadStream(path, { encoding: 'utf8', flag: 'r' }),
+    input: fs.createReadStream(path, { encoding: 'utf8', flag: 'r' }),
     output: process.stdout,
     terminal: false
   });
@@ -34,31 +61,7 @@ function map(path, done) {
   file.on('line', function(line) {
     // keep character lines
     count += line.length;
-
-    // parse line
-    (function parse(ln) {
-      // prepend remnant from previous line
-      ln = (remnant + ln);
-      remnant = '';
-
-      // move to next line
-      if (ln.length <= 3 ) {
-        remnant = remnant + ln;
-        return;
-      }
-
-      // increase appearance of triad
-      var t = ln.slice(0,3);
-      var c = 1;
-      if (triads.has(t)) {
-        c = triads.get(t);
-        c++;
-      }
-      triads.set(t, c);
-      // move to next triad of line
-      parse(ln.substr(1));
-    })(normalise(line));
-
+    remnant = parse(normalise(remnant+line), triads);
   });
 
   file.on('close', function() {
