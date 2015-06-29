@@ -1,2 +1,4 @@
 #!/bin/bash
-NODE_ENV=production node src/index.js
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+NODE_ENV=production node $DIR/src/index.js
